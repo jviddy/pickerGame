@@ -1,0 +1,33 @@
+Country,Cost,Group,Rank,TeamRef
+Qatar,2,A,51,A1
+Ecuador,4,A,46,A2
+Senegal,16,A,20,A3
+Netherlands,24,A,10,A4
+England,28,B,5,B1
+Iran,15,B,21,B2
+United States,19,B,15,B3
+Wales,17,B,18,B4
+Argentina,29,C,4,C1
+Saudi Arabia,3,C,49,C2
+Mexico,25,C,9,C3
+Poland,11,C,26,C4
+France,30,D,3,D1
+Australia,5,D,42,D2
+Denmark,23,D,11,D3
+Tunisia,8,D,35,D4
+Spain,27,E,7,E1
+Costa Rica,9,E,31,E2
+Germany,22,E,12,E3
+Japan,14,E,23,E4
+Belgium,31,F,2,F1
+Canada,6,F,38,F2
+Morocco,13,F,24,F3
+Croatia,18,F,16,F4
+Brazil,32,G,1,G1
+Serbia,12,G,25,G2
+Switzerland,20,G,14,G3
+Cameroon,7,G,37,G4
+Portugal,26,H,8,H1
+Ghana,1,H,60,H2
+Uruguay,21,H,13,H3
+South Korea,10,H,29,H4
