@@ -1,12 +1,15 @@
+var gameData = []  //array of team data
+var teamSelectedList = [] // list of teams selected
+
 document.addEventListener("DOMContentLoaded", event => {
 
         //const app = firebase.app();
         console.log("Hello")
+        addButtonListner()
         //loadTeamData()
 
 });
 
-var gameData = []
 
 function googleLogin() {
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -25,12 +28,12 @@ function googleLogin() {
 async function loadPickerForm(loadGameName, loadNumTeams, loadNumGroups, loadGroupsPerRow){
     //create gameVariables
     var gameName = loadGameName
-    var numTeams = loadNumTeams
-    var numGroups = loadNumGroups
-    var groupPerRow = loadGroupsPerRow
-    var teamPerGroup = numTeams / numGroups
-  
-        //reset team data array
+    //var numTeams = loadNumTeams
+    //var numGroups = loadNumGroups
+    //var groupPerRow = loadGroupsPerRow
+    //var teamPerGroup = numTeams / numGroups
+
+    //reset team data array
     gameData = null;
 
     console.log(`Game name is ${gameName}`)
@@ -48,7 +51,12 @@ async function loadPickerForm(loadGameName, loadNumTeams, loadNumGroups, loadGro
         console.log(obj);
     });
 
+
+    //cretae table struture and load into page
     createTeamButtonTable(gameData) 
+
+    //add event listener to team buttons
+    addButtonListner()
 }
   
 
@@ -73,8 +81,6 @@ async function loadTeamData(fileName) {
 return gameDataParse;
 };
     
-
-
 
 function createTeamButtonTable(teamList) {
    
@@ -107,7 +113,7 @@ function createTeamButtonTable(teamList) {
       // Create the table HTML string
       const tableHTML = `
       <table>
-        <thead>${tableHeaderRow}</thead>
+        //<thead>${tableHeaderRow}</thead>
         <tbody>${tableBodyRows}</tbody>
       </table>
       `;
@@ -123,5 +129,31 @@ function createTeamButtonTable(teamList) {
       // Append the table element to the HTML document
       document.body.appendChild(tableElement);
       
+}
 
+function addButtonListner() {
+    // select all elements with class "teamButton"
+  let buttons = document.querySelectorAll('.teamButton');
+
+  // loop through the buttons and add a click event listener to each
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      // get the ID of the clicked button
+      let buttonId = button.id;
+      // check if the button ID is already in the array
+      if (teamSelectedList.includes(buttonId)) {
+        // if it is, remove it from the array
+        teamSelectedList.splice(teamSelectedList.indexOf(buttonId), 1);
+        // remove the "clicked" class from the button
+        button.classList.remove('clicked');
+      } else {
+        // if it's not in the array, add it
+        teamSelectedList.push(buttonId);
+        // add the "clicked" class to the button
+        button.classList.add('clicked');
+      }
+      // print the array to the console (for testing purposes)
+      console.log(teamSelectedList);
+    });
+  });
 }
