@@ -30,51 +30,59 @@ async function loadPickerForm(loadGameName, loadNumTeams, loadNumGroups, loadGro
     var groupPerRow = loadGroupsPerRow
     var teamPerGroup = numTeams / numGroups
   
-        //reset team data array
-    gameData = null;
-
+    //reset team data array
+    gameData.splice(0, gameData.length)
+  
     console.log(`Game name is ${gameName}`)
-
+  
     gameDataFile = gameName + 'TeamData.csv'
     gameData = await loadTeamData(gameDataFile)
-
-    if (gameData === null) {
-        console.log("Error loading team data");
-        return;
-    }
-
+  
     console.log("checking val passed back")
     gameData.forEach(obj => {
-        console.log(obj);
+      console.log(obj);
     });
-
+  
     createTeamButtonTable(gameData) 
-}
+  }
   
 
 async function loadTeamData(fileName) {
     console.log("loading team data")
     //import team data from csv file and create and array of objects
+    // const teams = [
+    //     {Country: 'Wales', Cost: 17, Group: 'B', Rank: 18, TeamRef: 'B4'},
+    //     {Country: 'England', Cost: 15, Group: 'D', Rank: 12, TeamRef: 'D1'},
+    //     {Country: 'France', Cost: 12, Group: 'A', Rank: 7, TeamRef: 'A2'},
+    //     {Country: 'Germany', Cost: 16, Group: 'F', Rank: 4, TeamRef: 'F3'}
+    //   ];
+    // return teams;  
+
     
-    const response = await fetch(fileName);
-    const data = await response.text();
-    
-    // Use PapaParse to parse the CSV data into an array of objects
-    const gameDataParse = Papa.parse(data, { header: true, dynamicTyping: true }).data;
-
-    gameDataParse.sort((a,b) => a.TeamRef.localeCompare(b.TeamRef));
-
-    console.log("sorted")
-
-    gameDataParse.forEach(obj => {
+    fetch(fileName)
+    .then(response => response.text())
+    .then(data => {
+      // Use PapaParse to parse the CSV data into an array of objects
+      const gameDataParse = Papa.parse(data, { header: true, dynamicTyping: true }).data;
+  
+      // Loop through the array of objects and do something with each object
+      gameDataParse.forEach(obj => {
         console.log(obj);
-    });
+      });
 
-return gameDataParse;
-};
+      gameDataParse.sort((a,b) => a.TeamRef.localeCompare(b.TeamRef));
+
+      console.log("sorted")
+      
+      gameDataParse.forEach(obj => {
+        console.log(obj);
+      });
+      
+      return gameDataParse
+    });
     
 
-
+}
 
 function createTeamButtonTable(teamList) {
    
