@@ -1,0 +1,93 @@
+{
+  "pickerGames": [
+    {
+      "gameName": "wc23",
+      "gameDetails": {
+        "gameStartDate": "01072023",
+        "tournamentStartDate": "15072023",
+        "tournamentEndDate": "16072023",
+        "Location": "Australia & New Zealand",
+        "sport": "Football"
+      },
+      {
+        "teamList": [
+          {
+            "teamName": "England",
+            "teamRank": 5,
+            "teamCost": 28,
+            "teamGroup": "B",
+            "teamId": "B1",
+            "teamMatchList": [
+              {
+                "round": "1",
+                "matchNo": 1
+              },
+              {
+                "round": "2",
+                "matchNo": 3
+              }
+            ]
+          },
+          {
+            "teamName": "Ecuador",
+            "teamRank": 46,
+            "teamCost": 4,
+            "teamGroup": "A",
+            "teamId": "A2",
+            "teamMatchList": [
+              {
+                "round": "1",
+                "matchNo": 1
+              },
+              {
+                "round": "2",
+                "matchNo": 4
+              }
+            ]
+          }
+        ],
+      "matchList": [
+        {
+          "matchNo": 1,
+          "matchPlayed": false,
+          "gameDetails": {
+            "gameRound": 1,
+            "homeTeamID": "A1",
+            "awayTeamID": "A2",
+            "date": "16072023140000",
+            "location": "Sydney Stadium, Sydney, Australia",
+            "hGoals": 0,
+            "aGoals": 0,
+            "hYellowCards": 0,
+            "aYellowCards": 0,
+            "hRedCards": 0,
+            "aRedCards": 0,
+            "hPoints": 0,
+            "aPoints": 0,
+            "result": "t"
+          }
+        },
+        {
+          "gameNo": 2,
+          "matchPlayed": false,
+          "gameDetails": {
+            "gameRound": 1,
+            "homeTeamID": "A3",
+            "awayTeamID": "A4",
+            "date": "17072023140000",
+            "location": "Melbourne Stadium, Melbourne, Australia",
+            "hGoals": 0,
+            "aGoals": 0,
+            "hYellowCards": 0,
+            "aYellowCards": 0,
+            "hRedCards": 0,
+            "aRedCards": 0,
+            "hPoints": 0,
+            "aPoints": 0,
+            "result": "t"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,12 +1,16 @@
+var gameData = []  //array of team data
+var teamSelectedList = [] // list of teams selected
+
 document.addEventListener("DOMContentLoaded", event => {
 
         //const app = firebase.app();
         console.log("Hello")
+        addButtonListner()
+        loadJSON() 
         //loadTeamData()
 
 });
 
-var gameData = []
 
 function googleLogin() {
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -25,64 +29,59 @@ function googleLogin() {
 async function loadPickerForm(loadGameName, loadNumTeams, loadNumGroups, loadGroupsPerRow){
     //create gameVariables
     var gameName = loadGameName
-    var numTeams = loadNumTeams
-    var numGroups = loadNumGroups
-    var groupPerRow = loadGroupsPerRow
-    var teamPerGroup = numTeams / numGroups
-  
+    //var numTeams = loadNumTeams
+    //var numGroups = loadNumGroups
+    //var groupPerRow = loadGroupsPerRow
+    //var teamPerGroup = numTeams / numGroups
+
     //reset team data array
-    gameData.splice(0, gameData.length)
-  
+    gameData = null;
+
     console.log(`Game name is ${gameName}`)
-  
+
     gameDataFile = gameName + 'TeamData.csv'
     gameData = await loadTeamData(gameDataFile)
-  
+
+    if (gameData === null) {
+        console.log("Error loading team data");
+        return;
+    }
+
     console.log("checking val passed back")
     gameData.forEach(obj => {
-      console.log(obj);
+        console.log(obj);
     });
-  
+
+
+    //cretae table struture and load into page
     createTeamButtonTable(gameData) 
-  }
+
+    //add event listener to team buttons
+    addButtonListner()
+}
   
 
 async function loadTeamData(fileName) {
     console.log("loading team data")
     //import team data from csv file and create and array of objects
-    // const teams = [
-    //     {Country: 'Wales', Cost: 17, Group: 'B', Rank: 18, TeamRef: 'B4'},
-    //     {Country: 'England', Cost: 15, Group: 'D', Rank: 12, TeamRef: 'D1'},
-    //     {Country: 'France', Cost: 12, Group: 'A', Rank: 7, TeamRef: 'A2'},
-    //     {Country: 'Germany', Cost: 16, Group: 'F', Rank: 4, TeamRef: 'F3'}
-    //   ];
-    // return teams;  
-
     
-    fetch(fileName)
-    .then(response => response.text())
-    .then(data => {
-      // Use PapaParse to parse the CSV data into an array of objects
-      const gameDataParse = Papa.parse(data, { header: true, dynamicTyping: true }).data;
-  
-      // Loop through the array of objects and do something with each object
-      gameDataParse.forEach(obj => {
-        console.log(obj);
-      });
+    const response = await fetch(fileName);
+    const data = await response.text();
+    
+    // Use PapaParse to parse the CSV data into an array of objects
+    const gameDataParse = Papa.parse(data, { header: true, dynamicTyping: true }).data;
 
-      gameDataParse.sort((a,b) => a.TeamRef.localeCompare(b.TeamRef));
+    gameDataParse.sort((a,b) => a.TeamRef.localeCompare(b.TeamRef));
 
-      console.log("sorted")
-      
-      gameDataParse.forEach(obj => {
+    console.log("sorted")
+
+    gameDataParse.forEach(obj => {
         console.log(obj);
-      });
-      
-      return gameDataParse
     });
-    
 
-}
+return gameDataParse;
+};
+    
 
 function createTeamButtonTable(teamList) {
    
@@ -115,7 +114,7 @@ function createTeamButtonTable(teamList) {
       // Create the table HTML string
       const tableHTML = `
       <table>
-        <thead>${tableHeaderRow}</thead>
+        //<thead>${tableHeaderRow}</thead>
         <tbody>${tableBodyRows}</tbody>
       </table>
       `;
@@ -131,5 +130,52 @@ function createTeamButtonTable(teamList) {
       // Append the table element to the HTML document
       document.body.appendChild(tableElement);
       
+}
 
+function addButtonListner() {  //working
+  /*
+    call to function to check how many elements in teh array
+    value of the teams in the array
+    display teams selected on screen
+  */
+
+    // select all elements with class "teamButton"
+  let buttons = document.querySelectorAll('.teamButton');
+
+  // loop through the buttons and add a click event listener to each
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      // get the ID of the clicked button
+      let buttonId = button.id;
+      // check if the button ID is already in the array
+      if (teamSelectedList.includes(buttonId)) {
+        // if it is, remove it from the array
+        teamSelectedList.splice(teamSelectedList.indexOf(buttonId), 1);
+        // remove the "clicked" class from the button
+        button.classList.remove('clicked');
+      } else {
+        // if it's not in the array, add it
+        teamSelectedList.push(buttonId);
+        // add the "clicked" class to the button
+        button.classList.add('clicked');
+      }
+      // print the array to the console (for testing purposes)
+      console.log(teamSelectedList);
+    });
+  });
+}
+
+function loadJSON() {
+  
+  fetch('sampleJSON.json')
+    .then(response => response.json())
+    .then(data => {
+      const game = data.pickerGames.find(game => game.gameName === 'wc23');
+      const teams = game.teamList.map(team => {
+        const { teamName, teamRank, teamCost, teamGroup, teamId } = team;
+        return { teamName, teamRank, teamCost, teamGroup, teamId };
+      });
+      console.log(teams); // or do whatever you want with the teams array
+    })
+    .catch(error => console.error(error));
 }

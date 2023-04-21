@@ -1,0 +1,279 @@
+"teamList": [
+    {
+      "teamName": "Qatar",
+      "teamRank": 51,
+      "teamCost": 2,
+      "teamGroup": "A",
+      "teamId": "A1",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "Ecuador",
+      "teamRank": 46,
+      "teamCost": 4,
+      "teamGroup": "A",
+      "teamId": "A2",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "Senegal",
+      "teamRank": 20,
+      "teamCost": 16,
+      "teamGroup": "A",
+      "teamId": "A3",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "Netherlands",
+      "teamRank": 10,
+      "teamCost": 24,
+      "teamGroup": "A",
+      "teamId": "A4",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "England",
+      "teamRank": 5,
+      "teamCost": 28,
+      "teamGroup": "B",
+      "teamId": "B1",
+      "teamMatchList": [
+        {
+          "round": "1",
+          "matchNo": 1
+        },
+        {
+          "round": "2",
+          "matchNo": 3
+        }
+      ]
+    },
+    {
+      "teamName": "Iran",
+      "teamRank": 21,
+      "teamCost": 15,
+      "teamGroup": "B",
+      "teamId": "B2",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "United States",
+      "teamRank": 15,
+      "teamCost": 19,
+      "teamGroup": "B",
+      "teamId": "B3",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "Wales",
+      "teamRank": 18,
+      "teamCost": 17,
+      "teamGroup": "B",
+      "teamId": "B4",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "Argentina",
+      "teamRank": 4,
+      "teamCost": 29,
+      "teamGroup": "C",
+      "teamId": "C1",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "Saudi Arabia",
+      "teamRank": 49,
+      "teamCost": 3,
+      "teamGroup": "C",
+      "teamId": "C2",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "Mexico",
+      "teamRank": 9,
+      "teamCost": 25,
+      "teamGroup": "C",
+      "teamId": "C3",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "Poland",
+      "teamRank": 26,
+      "teamCost": 11,
+      "teamGroup": "C",
+      "teamId": "C4",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "France",
+      "teamRank": 3,
+      "teamCost": 30,
+      "teamGroup": "D",
+      "teamId": "D1",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "Australia",
+      "teamRank": 42,
+      "teamCost": 5,
+      "teamGroup": "D",
+      "teamId": "D2",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "Denmark",
+      "teamRank": 11,
+      "teamCost": 23,
+      "teamGroup": "D",
+      "teamId": "D3",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "Tunisia",
+      "teamRank": 35,
+      "teamCost": 8,
+      "teamGroup": "D",
+      "teamId": "D4",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "Spain",
+      "teamRank": 7,
+      "teamCost": 27,
+      "teamGroup": "E",
+      "teamId": "E1",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "Costa Rica",
+      "teamRank": 31,
+      "teamCost": 9,
+      "teamGroup": "E",
+      "teamId": "E2",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "Germany",
+      "teamRank": 12,
+      "teamCost": 22,
+      "teamGroup": "E",
+      "teamId": "E3",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "Japan",
+      "teamRank": 23,
+      "teamCost": 14,
+      "teamGroup": "E",
+      "teamId": "E4",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "Belgium",
+      "teamRank": 2,
+      "teamCost": 31,
+      "teamGroup": "F",
+      "teamId": "F1",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "Canada",
+      "teamRank": 38,
+      "teamCost": 6,
+      "teamGroup": "F",
+      "teamId": "F2",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "Morocco",
+      "teamRank": 24,
+      "teamCost": 13,
+      "teamGroup": "F",
+      "teamId": "F3",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "Croatia",
+      "teamRank": 16,
+      "teamCost": 18,
+      "teamGroup": "F",
+      "teamId": "F4",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "Brazil",
+      "teamRank": 1,
+      "teamCost": 32,
+      "teamGroup": "G",
+      "teamId": "G1",
+      "teamMatchList": null
+    },
+    {
+      "teamName": "Serbia",
+      "teamRank": 25,
+      "teamCost": 12,
+      "teamGroup": "G",
+      "teamId": "G2",
+      "teamMatchList": null
+    },
+    {
+"teamList": [
+{
+"teamName": "Serbia",
+"teamCost": 12,
+"teamGroup": "G",
+"teamRank": 25,
+"teamId": "G2",
+"teamMatchList": null
+},
+{
+"teamName": "Switzerland",
+"teamCost": 20,
+"teamGroup": "G",
+"teamRank": 14,
+"teamId": "G3",
+"teamMatchList": null
+},
+{
+"teamName": "Cameroon",
+"teamCost": 7,
+"teamGroup": "G",
+"teamRank": 37,
+"teamId": "G4",
+"teamMatchList": null
+},
+{
+"teamName": "Portugal",
+"teamCost": 26,
+"teamGroup": "H",
+"teamRank": 8,
+"teamId": "H1",
+"teamMatchList": null
+},
+{
+"teamName": "Ghana",
+"teamCost": 1,
+"teamGroup": "H",
+"teamRank": 60,
+"teamId": "H2",
+"teamMatchList": null
+},
+{
+"teamName": "Uruguay",
+"teamCost": 21,
+"teamGroup": "H",
+"teamRank": 13,
+"teamId": "H3",
+"teamMatchList": null
+},
+{
+"teamName": "South Korea",
+"teamCost": 10,
+"teamGroup": "H",
+"teamRank": 29,
+"teamId": "H4",
+"teamMatchList": null
+}
+]
+}
+  ]

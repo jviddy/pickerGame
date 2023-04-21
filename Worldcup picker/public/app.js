@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", event => {
         //const app = firebase.app();
         console.log("Hello")
         addButtonListner()
+       // loadJSON() 
         //loadTeamData()
 
 });
@@ -64,22 +65,29 @@ async function loadTeamData(fileName) {
     console.log("loading team data")
     //import team data from csv file and create and array of objects
     
-    const response = await fetch(fileName);
-    const data = await response.text();
-    
-    // Use PapaParse to parse the CSV data into an array of objects
-    const gameDataParse = Papa.parse(data, { header: true, dynamicTyping: true }).data;
+    try {
+      const response = await fetch('sampleJSON.json');
+      const data = await response.json();
+      const game = data.pickerGames.find(game => game.gameName === "wc23");
+      const teams = game.teamList.map(team => {
+        const { teamName, teamRank, teamCost, teamGroup, teamId } = team;
+        return { teamName, teamRank, teamCost, teamGroup, teamId };
+      });
 
-    gameDataParse.sort((a,b) => a.TeamRef.localeCompare(b.TeamRef));
+      teams.sort((a,b) => a.teamId.localeCompare(b.teamId));
 
-    console.log("sorted")
+      console.log("sorted")
 
-    gameDataParse.forEach(obj => {
+      teams.forEach(obj => {
         console.log(obj);
-    });
+      })
+      return teams;
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
-return gameDataParse;
-};
+
     
 
 function createTeamButtonTable(teamList) {
@@ -131,7 +139,13 @@ function createTeamButtonTable(teamList) {
       
 }
 
-function addButtonListner() {
+function addButtonListner() {  //working
+  /*
+    call to function to check how many elements in teh array
+    value of the teams in the array
+    display teams selected on screen
+  */
+
     // select all elements with class "teamButton"
   let buttons = document.querySelectorAll('.teamButton');
 
@@ -156,4 +170,19 @@ function addButtonListner() {
       console.log(teamSelectedList);
     });
   });
+}
+
+function loadJSON() {
+  
+  fetch('sampleJSON.json')
+    .then(response => response.json())
+    .then(data => {
+      const game = data.pickerGames.find(game => game.gameName === 'wc23');
+      const teams = game.teamList.map(team => {
+        const { teamName, teamRank, teamCost, teamGroup, teamId } = team;
+        return { teamName, teamRank, teamCost, teamGroup, teamId };
+      });
+      console.log(teams); // or do whatever you want with the teams array
+    })
+    .catch(error => console.error(error));
 }
