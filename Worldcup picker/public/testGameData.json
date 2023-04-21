@@ -9,83 +9,142 @@
         "Location": "Australia & New Zealand",
         "sport": "Football"
       },
-      {
-        "teamList": [
-          {
-            "teamName": "England",
-            "teamRank": 5,
-            "teamCost": 28,
-            "teamGroup": "B",
-            "teamId": "B1",
-            "teamMatchList": [
-              {
-                "round": "1",
-                "matchNo": 1
-              },
-              {
-                "round": "2",
-                "matchNo": 3
-              }
-            ]
-          },
-          {
-            "teamName": "Ecuador",
-            "teamRank": 46,
-            "teamCost": 4,
-            "teamGroup": "A",
-            "teamId": "A2",
-            "teamMatchList": [
-              {
-                "round": "1",
-                "matchNo": 1
-              },
-              {
-                "round": "2",
-                "matchNo": 4
-              }
-            ]
-          }
-        ],
-      "matchList": [
+      "teamList": [
         {
-          "matchNo": 1,
-          "matchPlayed": false,
-          "gameDetails": {
-            "gameRound": 1,
-            "homeTeamID": "A1",
-            "awayTeamID": "A2",
-            "date": "16072023140000",
-            "location": "Sydney Stadium, Sydney, Australia",
-            "hGoals": 0,
-            "aGoals": 0,
-            "hYellowCards": 0,
-            "aYellowCards": 0,
-            "hRedCards": 0,
-            "aRedCards": 0,
-            "hPoints": 0,
-            "aPoints": 0,
-            "result": "t"
-          }
+          "teamName": "Ecuador",
+          "teamRank": 46,
+          "teamCost": 4,
+          "teamGroup": "A",
+          "teamId": "A2",
+          "teamMatchList": [
+            {
+              "round": "1",
+              "matchNo": 1
+            },
+            {
+              "round": "2",
+              "matchNo": 4
+            }
+          ]
         },
         {
-          "gameNo": 2,
-          "matchPlayed": false,
-          "gameDetails": {
-            "gameRound": 1,
-            "homeTeamID": "A3",
-            "awayTeamID": "A4",
-            "date": "17072023140000",
-            "location": "Melbourne Stadium, Melbourne, Australia",
-            "hGoals": 0,
-            "aGoals": 0,
-            "hYellowCards": 0,
-            "aYellowCards": 0,
-            "hRedCards": 0,
-            "aRedCards": 0,
-            "hPoints": 0,
-            "aPoints": 0,
-            "result": "t"
-          }
+          "teamName": "Qatar",
+          "teamRank": 51,
+          "teamCost": 2,
+          "teamGroup": "A",
+          "teamId": "A1",
+          "teamMatchList": [
+            {
+              "round": "1",
+              "matchNo": 2
+            },
+            {
+              "round": "2",
+              "matchNo": 4
+            }
+          ]
+        },
+        {
+          "teamName": "Iran",
+          "teamRank": 21,
+          "teamCost": 15,
+          "teamGroup": "B",
+          "teamId": "B2",
+          "teamMatchList": [
+            {
+              "round": "1",
+              "matchNo": 2
+            },
+            {
+              "round": "2",
+              "matchNo": 3
+            }
+          ]
+        },
+        {
+          "teamName": "United States",
+          "teamRank": 15,
+          "teamCost": 19,
+          "teamGroup": "B",
+          "teamId": "B3",
+          "teamMatchList": [
+            {
+              "round": "1",
+              "matchNo": 1
+            },
+            {
+              "round": "2",
+              "matchNo": 3
+            }
+          ]
+        },
+        {
+          "teamName": "Senegal",
+          "teamRank": 20,
+          "teamCost": 16,
+          "teamGroup": "A",
+          "teamId": "A3",
+          "teamMatchList": [
+            {
+              "round": "1",
+              "matchNo": 2
+            },
+            {
+              "round": "2",
+              "matchNo": 4
+            }
+          ]
+        },
+        {
+          "teamName": "Netherlands",
+          "teamRank": 10,
+          "teamCost": 24,
+          "teamGroup": "A",
+          "teamId": "A4",
+          "teamMatchList": [
+            {
+              "round": "1",
+              "matchNo": 1
+            },
+            {
+              "round": "2",
+              "matchNo": 3
+            }
+          ]
+        },
+        {
+          "teamName": "England",
+          "teamRank": 5,
+          "teamCost": 28,
+          "teamGroup": "B",
+          "teamId": "B1",
+          "teamMatchList": [
+            {
+              "round": "1",
+              "matchNo": 1
+            },
+            {
+              "round": "2",
+              "matchNo": 3
+            }
+          ]
+        },
+        {
+          "teamName": "Wales",
+          "teamRank": 18,
+          "teamCost": 17,
+          "teamGroup": "B",
+          "teamId": "B4",
+          "teamMatchList": [
+            {
+              "round": "1",
+              "matchNo": 2
+            },
+            {
+              "round": "2",
+              "matchNo": 4
+            }
+          ]
         }
       ]
     }

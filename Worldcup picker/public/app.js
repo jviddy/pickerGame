@@ -6,9 +6,8 @@ document.addEventListener("DOMContentLoaded", event => {
         //const app = firebase.app();
         console.log("Hello")
         addButtonListner()
-       // loadJSON() 
-        //loadTeamData()
-
+       
+       
 });
 
 
@@ -26,20 +25,16 @@ function googleLogin() {
             .catch (console.log)
 }
 
-async function loadPickerForm(loadGameName, loadNumTeams, loadNumGroups, loadGroupsPerRow){
+async function loadPickerForm(loadGameName){
     //create gameVariables
     var gameName = loadGameName
-    //var numTeams = loadNumTeams
-    //var numGroups = loadNumGroups
-    //var groupPerRow = loadGroupsPerRow
-    //var teamPerGroup = numTeams / numGroups
 
     //reset team data array
     gameData = null;
 
     console.log(`Game name is ${gameName}`)
 
-    gameDataFile = gameName + 'TeamData.csv'
+    gameDataFile = gameName + 'Data.json'
     gameData = await loadTeamData(gameDataFile)
 
     if (gameData === null) {
@@ -62,11 +57,11 @@ async function loadPickerForm(loadGameName, loadNumTeams, loadNumGroups, loadGro
   
 
 async function loadTeamData(fileName) {
-    console.log("loading team data")
+    console.log("loading team datafrom file: " + fileName)
     //import team data from csv file and create and array of objects
     
     try {
-      const response = await fetch('sampleJSON.json');
+      const response = await fetch(fileName);
       const data = await response.json();
       const game = data.pickerGames.find(game => game.gameName === "wc23");
       const teams = game.teamList.map(team => {
@@ -78,18 +73,25 @@ async function loadTeamData(fileName) {
 
       console.log("sorted")
 
-      teams.forEach(obj => {
-        console.log(obj);
-      })
       return teams;
     } catch (error) {
       console.error(error);
     }
   }
 
-
-    
-
+function groupByTeamGroup(arr) {
+  const result = {};
+  arr.forEach((obj) => {
+    const teamGroup = obj.teamGroup;
+    if (result[teamGroup]) {
+      result[teamGroup].push(obj);
+    } else {
+      result[teamGroup] = [obj];
+    }
+  });
+  return Object.values(result);
+}
+  
 function createTeamButtonTable(teamList) {
    
       console.log("creating table")
@@ -170,19 +172,4 @@ function addButtonListner() {  //working
       console.log(teamSelectedList);
     });
   });
-}
-
-function loadJSON() {
-  
-  fetch('sampleJSON.json')
-    .then(response => response.json())
-    .then(data => {
-      const game = data.pickerGames.find(game => game.gameName === 'wc23');
-      const teams = game.teamList.map(team => {
-        const { teamName, teamRank, teamCost, teamGroup, teamId } = team;
-        return { teamName, teamRank, teamCost, teamGroup, teamId };
-      });
-      console.log(teams); // or do whatever you want with the teams array
-    })
-    .catch(error => console.error(error));
 }

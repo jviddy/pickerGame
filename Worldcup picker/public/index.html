@@ -33,13 +33,13 @@
     <script src="app.js">
     </script>
 
-  <button onclick="loadPickerForm('testGame', 8, 2, 2 )">
+  <button onclick="loadPickerForm('testGame')">
       
     Test game picker form
 
   </button>
 
-    <button onclick="loadPickerForm('wc22picker', 32, 8, 4 )">
+    <button onclick="loadPickerForm('wc22')">
     
       World Cup 22 picker form
 
@@ -52,29 +52,34 @@
 
     </button>
   -->
+    
+    <div id="pickerTableDiv">
+      <table id="pickerTable">
+        <tr>
+          <td id="A">
+            <table id="tableA">
+              <tr><td><button id="A1" class="teamButton">Team 1</button></td></tr>
+              <tr><td><button id="A2" class="teamButton">Team 2</button></td></tr>
+              <tr><td><button id="A3" class="teamButton">Team 3</button></td></tr>
+              <tr><td><button id="A4" class="teamButton">Team 4</button></td></tr>
+            </table>
+          </td>
+          <td id="B">
+            <table id="tableB">
+              <tr><td><button id="B1" class="teamButton">Team 1</button></td></tr>
+              <tr><td><button id="B2" class="teamButton">Team 2</button></td></tr>
+              <tr><td><button id="B3" class="teamButton">Team 3</button></td></tr>
+              <tr><td><button id="B4" class="teamButton">Team 4</button></td></tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+    
 
-  <div id="pickerTableDiv">
-    <table id="pickerTable">
-      <tr>
-        <td id="A">
-          <table id="tableA">
-            <tr><td><button id="A1" class="teamButton">Team 1</button></td></tr>
-            <tr><td><button id="A2" class="teamButton">Team 2</button></td></tr>
-            <tr><td><button id="A3" class="teamButton">Team 3</button></td></tr>
-            <tr><td><button id="A4" class="teamButton">Team 4</button></td></tr>
-          </table>
-        </td>
-        <td id="B">
-          <table id="tableB">
-            <tr><td><button id="B1" class="teamButton">Team 1</button></td></tr>
-            <tr><td><button id="B2" class="teamButton">Team 2</button></td></tr>
-            <tr><td><button id="B3" class="teamButton">Team 3</button></td></tr>
-            <tr><td><button id="B4" class="teamButton">Team 4</button></td></tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-  </div>
+    <div id="pickerTable">
+
+    </div>
    
   </body>
 </html>
