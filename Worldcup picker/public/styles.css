@@ -1,3 +1,59 @@
 .clicked {
     background-color: yellow;
   }
+
+
+  /* Default styles for all screen sizes */
+
+/* Set the height and width of each button */
+button {
+  height: 50px;
+  width: 150px;
+}
+
+/* Add a border around each group of buttons */
+.group {
+  border: 1px solid black;
+  margin-bottom: 20px; /* Add a gap between groups */
+}
+
+/* Media query for screens between 600px and 1000px */
+
+@media (min-width: 600px) and (max-width: 1000px) {
+  /* Change the layout to 4 rows of 2 groups */
+  body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .group {
+    width: 45%; /* Fill half the screen width with a gap in between */
+    margin-bottom: 10px;
+  }
+}
+
+/* Media query for screens larger than 1000px */
+
+@media (min-width: 1000px) {
+  /* Change the layout to 2 rows of 4 groups */
+  body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .group {
+    width: 22%; /* Fill a quarter of the screen width with a gap in between */
+    margin-bottom: 20px;
+  }
+}
+
+/* Media query for mobile devices */
+
+@media (max-width: 599px) {
+  /* Change the layout to stacked groups */
+  .group {
+    width: 100%; /* Fill the screen width with a gap in between */
+  }
+}

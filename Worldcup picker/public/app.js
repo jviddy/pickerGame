@@ -3,9 +3,9 @@ var teamSelectedList = [] // list of teams selected
 
 document.addEventListener("DOMContentLoaded", event => {
 
-        //const app = firebase.app();
-        console.log("Hello")
-        addButtonListner()
+        const app = firebase.app();
+        
+        //addButtonListner()
        
        
 });
@@ -26,15 +26,15 @@ function googleLogin() {
 }
 
 async function loadPickerForm(loadGameName){
-    //create gameVariables
-    var gameName = loadGameName
-
     //reset team data array
     gameData = null;
 
-    console.log(`Game name is ${gameName}`)
+    console.log(`Game name is ${loadGameName}`)
 
-    gameDataFile = gameName + 'Data.json'
+    //set game data file
+    gameDataFile = loadGameName + 'Data.json'
+    
+    //load game data file
     gameData = await loadTeamData(gameDataFile)
 
     if (gameData === null) {
@@ -42,11 +42,14 @@ async function loadPickerForm(loadGameName){
         return;
     }
 
+    //testing code
     console.log("checking val passed back")
     gameData.forEach(obj => {
-        console.log(obj);
+        console.log(obj); 
     });
+    //testing code
 
+    //set no of teams, no of groups, no of picks, budget, tie break question
 
     //cretae table struture and load into page
     createTeamButtonTable(gameData) 
@@ -173,3 +176,41 @@ function addButtonListner() {  //working
     });
   });
 }
+
+
+
+// Initialize an empty array to store the selected teams
+let selectedTeams = [];
+
+// Set the maximum number of teams to 4
+const maxTeams = 4;
+
+// Get the button element
+const addButton = document.getElementById("addButton");
+
+// Add a click event listener to the button
+addButton.addEventListener("click", () => {
+  // Check if the maximum number of teams has been reached
+  if (selectedTeams.length === maxTeams) {
+    // Disable the button if the maximum number of teams has been reached
+    addButton.disabled = true;
+    return;
+  }
+
+  // Otherwise, add the selected team to the array
+  const selectedTeam = document.querySelector('input[name="team"]:checked').value;
+  selectedTeams.push(selectedTeam);
+
+  // If the maximum number of teams has not been reached, enable the button
+  addButton.disabled = selectedTeams.length === maxTeams;
+
+  console.log(`Selected teams: ${selectedTeams}`);
+});
+
+// Add a change event listener to the radio buttons to enable the button when a selection is deselected
+const radioButtons = document.querySelectorAll('input[name="team"]');
+radioButtons.forEach((radioButton) => {
+  radioButton.addEventListener("change", () => {
+    addButton.disabled = false;
+  });
+});

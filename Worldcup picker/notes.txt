@@ -15,3 +15,7 @@ git commands
 git add . //add all of the current structure to a git push
 git commit -m "insert commit message" //commit the change locally
 git push --set-upstream pickerGame main //push change to repository and stream
+
+
+realtime database location
+https://football-picker-a5d3d-default-rtdb.europe-west1.firebasedatabase.app/

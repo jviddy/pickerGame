@@ -8,6 +8,19 @@
         "tournamentEndDate": "16072023",
         "Location": "Australia & New Zealand",
         "sport": "Football"
+        "noPicks":8,
+        "noGroups":8,
+        "noTeams":32,
+        "gameBudget": 125,
+        "tieBreakers": [
+          {
+            "tieBreaker":"How many goals will be scored in regular time during the tournament?"
+          }
+          {
+            "tieBreaker":"What will be the time (in minutes) of the last goal scored in the final of the tournament?"
+          }
+
+        ]
       },
       "teamList": [
         {
