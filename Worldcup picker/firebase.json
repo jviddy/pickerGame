@@ -1,3 +1,4 @@
+
 {
   "hosting": {
     "public": "public",
@@ -6,6 +7,9 @@
       "**/.*",
       "**/node_modules/**"
     ]
+  },
+  "ui": {
+    "enabled": false      
   },
   "functions": [
     {

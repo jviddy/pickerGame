@@ -1,0 +1,1 @@
+Service account on beanstalk: pickerGameService
